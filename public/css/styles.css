@@ -6,20 +6,40 @@ html {
 
 h1 {
   color: #fff;
-  padding: 10px;
+  display: inline;
 }
 
 .box {
   max-width: 400px;
-  margin: 50px auto;
+  margin: 40px auto;
   background: white;
   border-radius: 5px;
-  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: 5x 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
 #heading {
   background-color: #422800;
   text-align: center;
+  padding: 10px;
+  margin-bottom: 0px;
+}
+
+#room {
+  max-width: 200px;
+  margin: 0px auto;
+}
+
+.iptRoom{
+  width: 99%;
+  font-size: 19px;
+  outline: none;
+  border: none;
+  resize: none;
+  text-align: center;
+  background-color: transparent;
+  overflow:hidden;
+  color:gray;
+  font-family: 'Fredoka', sans-serif;
 }
 
 .item {
@@ -27,6 +47,7 @@ h1 {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #F1F1F1;
+  word-break: break-word;
 }
 
 .item:last-child {
