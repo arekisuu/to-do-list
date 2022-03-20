@@ -1,0 +1,33 @@
+<%# Add header template using EJS %>
+<%- include("header") -%>
+
+<div class="box" id="heading">
+  <h1> <%= listTitle %> </h1>
+</div>
+
+<div class="box">
+
+  <%# Use a forEach loop to add new items to the list %>
+  <% newListItems.forEach((item) => { %>
+  <form action="/delete" method="post">
+    <div class="item">
+
+      <%# Submit a post request for item deletion when the checkbox is checked %>
+      <input type="checkbox" name="checkbox" value="<%=item._id%>" onChange="this.form.submit()">
+      <p><%= item.name %></p>
+    </div>
+
+    <%# Use a hidden input to detect the list where the item is being deleted from %>
+    <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+  </form>
+  <% }) %>
+
+  <%# Send a post request to add new items to the list when the + button is pressed %>
+  <form class="item" action="/" method="post">
+    <input type="text" name="newItem" placeholder="New Item" autocomplete="off" required>
+    <button type="submit" name="list" value="<%= listTitle %>">+</button>
+  </form>
+</div>
+
+<%# Add footer template using EJS %>
+<%- include("footer") -%>
